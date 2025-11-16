@@ -116,3 +116,4 @@ while running:
     clock.tick(60)
 
 pygame.quit()
+print("you are the end of the my lover")
