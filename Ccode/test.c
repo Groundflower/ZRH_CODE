@@ -37,22 +37,22 @@
 //     printf("exit\n");
 //     return 0;
 // }
-int testmalloc() {
-    int* p =malloc(10*sizeof(int));
-    if (!p) {
-        printf("malloc failed\n");
-        return 1;
-    }
-    memset (p,0,10*sizeof(int));
 
-    for(int i=0;i<10;i++) {
 
-        printf("%d\n",*(p+i));
-    }
-    free(p);
-    p =NULL;
-}
-int main() {
-    testmalloc();
+#include <stdio.h>
+#include<math.h>
+#include <stdio.h>
+
+int main()
+{	int arr[12]={31,29,31,30,31,30,31,31,30,31,30,31};
+    int* i = arr;
+    do{
+        *i=1;
+        printf("Input a month:");
+        scanf("%d",i);
+    }while(*i<1||*i>12);
+    printf("The number of days is %d\n",arr[*i+1]);
+
+
     return 0;
 }
