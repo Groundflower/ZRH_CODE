@@ -29,6 +29,7 @@ void test() {
 }
 
 
-void main() {
+int main() {
     test();
+    return 0;
 }
