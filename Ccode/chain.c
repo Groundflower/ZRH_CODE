@@ -12,6 +12,7 @@ void test() {
     Node n3={ 3,NULL};
     Node n4={ 4,NULL};
     Node n5={ 5,NULL};
+    scanf("%d",&n1.data);
 
 
     n1.next = &n2;
