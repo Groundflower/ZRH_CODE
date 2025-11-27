@@ -38,21 +38,35 @@
 //     return 0;
 // }
 
-
-#include <stdio.h>
-#include<math.h>
-#include <stdio.h>
-
-int main()
-{	int arr[12]={31,29,31,30,31,30,31,31,30,31,30,31};
-    int* i = arr;
-    do{
-        *i=1;
-        printf("Input a month:");
-        scanf("%d",i);
-    }while(*i<1||*i>12);
-    printf("The number of days is %d\n",arr[*i+1]);
-
-
+void swap(int *a,int*b) {
+    int temp = *a;
+    *a=*b;
+    *b = temp;
+}
+int datainput(int *arr) {
+    int i = -1;
+    do {
+        i++;
+        scanf("%d", &arr[i]);
+    }while (arr[i]>=0);
+    return i;
+}
+int date(int *arr,int n) {
+    for (int i=0;i<n;i++) {
+        int min =i;
+        for (int j=i+1;j<n;j++) {
+            arr[j]<arr[min]?min=j:1;
+        }
+        swap(&arr[i],&arr[min]);
+    }
     return 0;
+}
+
+int main() {
+    int arr[100]={};
+    int n= datainput(arr);
+    date(arr,n);
+    for (int i=0;i<n;i++) {
+        printf("%d ",arr[i]);
+    }
 }

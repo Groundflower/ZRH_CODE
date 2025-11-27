@@ -4,7 +4,7 @@
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
-
+#define N 10
 void swap(int *a,int *b) {
     int temp = *a;
     *a = *b;
@@ -12,7 +12,7 @@ void swap(int *a,int *b) {
 }
 void PRINT(int arr[]) {
     int n = 0;
-    for (n = 0;n <= 9;n++) {
+    for (n = 0;n <N;n++) {
         printf("%d  ",arr[n]);
     }
 }
