@@ -1,6 +1,7 @@
 import keyboard
 import pyautogui
 import time
+import sys
 
 
 def zrhwrite(text, interval=0.05):
@@ -18,7 +19,8 @@ if __name__ == "__main__":
     print("程序已启动！操作说明：")
     print(f"→ 按 {'F11'.upper()}：安全退出程序")
     print("="*30)
-    text = input("输入").strip()
+    print("please input(ctrl+z-->enter to stop)")
+    text = sys.stdin.read()
 
 
     keyboard.wait('f11')
