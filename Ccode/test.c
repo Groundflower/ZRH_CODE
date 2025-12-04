@@ -38,35 +38,58 @@
 //     return 0;
 // }
 
-void swap(int *a,int*b) {
-    int temp = *a;
-    *a=*b;
-    *b = temp;
-}
-int datainput(int *arr) {
-    int i = -1;
-    do {
-        i++;
-        scanf("%d", &arr[i]);
-    }while (arr[i]>=0);
-    return i;
-}
-int date(int *arr,int n) {
-    for (int i=0;i<n;i++) {
-        int min =i;
-        for (int j=i+1;j<n;j++) {
-            arr[j]<arr[min]?min=j:1;
-        }
-        swap(&arr[i],&arr[min]);
-    }
-    return 0;
-}
+// void swap(int *a,int*b) {
+//     int temp = *a;
+//     *a=*b;
+//     *b = temp;
+// }
+// int datainput(int *arr) {
+//     int i = -1;
+//     do {
+//         i++;
+//         scanf("%d", &arr[i]);
+//     }while (arr[i]>=0);
+//     return i;
+// }
+// int date(int *arr,int n) {
+//     for (int i=0;i<n;i++) {
+//         int min =i;
+//         for (int j=i+1;j<n;j++) {
+//             arr[j]<arr[min]?min=j:1;
+//         }
+//         swap(&arr[i],&arr[min]);
+//     }
+//     return 0;
+// }
+//
+// int main() {
+//     int arr[100]={};
+//     int n= datainput(arr);
+//     date(arr,n);
+//     for (int i=0;i<n;i++) {
+//         printf("%d ",arr[i]);
+//     }
+// }
+
+#include <stdio.h>
 
 int main() {
-    int arr[100]={};
-    int n= datainput(arr);
-    date(arr,n);
-    for (int i=0;i<n;i++) {
-        printf("%d ",arr[i]);
-    }
+    int weight_kg, height_cm;
+    float height_m, t;
+    int weight_jin;
+
+    printf("Input weight, height:\n");
+    scanf("%d,%d", &weight_kg, &height_cm);
+
+    height_m = (float)height_cm / 100;     // 厘米转米
+    weight_jin = weight_kg * 2;            // 公斤转斤
+
+    printf("weight=%d\n", weight_jin);
+    printf("height=%.2f\n", height_m);
+
+    t = (float)weight_kg / (height_m * height_m);  // 计算体指数
+
+    printf("t=%.2f\n", t);
+
+    return 0;
 }
