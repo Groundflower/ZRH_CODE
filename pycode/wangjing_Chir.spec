@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['handcopy.py'],
+    ['wangjing_Chir.py'],
     pathex=[],
     binaries=[],
     datas=[],
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='handcopy',
+    name='wangjing_Chir',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
