@@ -59,7 +59,9 @@ void solution_3() {
     }
 }
 
-
+int binsearch(int *a,int key,int n) {
+    int p1=0,p2=n;
+}
 
 
 

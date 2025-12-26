@@ -12,7 +12,7 @@ def drawlight():
         circle(3)
     else:
         linewidth = 5
-        color('pink')
+        color('green')
 
 
 # 定义画圣诞树的函数
@@ -98,8 +98,8 @@ backward(n / 2)
 xzs()
 
 # 写文字
-t.color("dark red", "yellow")
-t.write("Merry Christmas 薯片", align="center", font=("Comic Sans MS", 40, "bold"))
+t.color("red", "yellow")
+t.write("Merry Christmas strawberry", align="center", font=("Comic Sans MS", 40, "bold"))
 
 # 调用雪花函数
 drawsnow()
