@@ -1,36 +1,52 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <string.h>
+#include <windows.h>
 
 typedef struct Node {
     int data;
-    struct Node* next;
-}Node;
+    char name[20];
+    struct Node *next;
+} Node;
 
-void test() {
-    Node n1={1,NULL};
-    Node n2={ 2,NULL};
-    Node n3={ 3,NULL};
-    Node n4={ 4,NULL};
-    Node n5={ 5,NULL};
-    scanf("%d",&n1.data);
-
-
-    n1.next = &n2;
-    n2.next = &n3;
-    n3.next = &n4;
-    n4.next = &n5;
-    n5.next = NULL;
-
-    Node * current=&n1;
-    while (current!=NULL) {
-        printf("%d",current->data);
-        current=current->next;
-
+void Print(Node *head) {
+    Node *p = head->next;
+    while (p != NULL) {
+        printf("Name: %s, Data: %d\n", p->name, p->data);
+        p = p->next;
     }
+    printf("Traversal completed.\n");
 }
 
+Node* create() {
+    Node *head = (Node*)malloc(sizeof(Node));
+    head->next = NULL;
+
+    Node *tail = head;
+
+    for (int i = 0; i < 3; i++) {
+        Node *newNode = (Node*)malloc(sizeof(Node));
+        newNode->data = i;
+        sprintf(newNode->name, "Node_%d", i);
+        newNode->next = NULL;
+
+        tail->next = newNode;
+        tail = newNode;
+    }
+
+    return head;
+}
 
 int main() {
-    test();
+    Node *head = create();
+    Print(head);
+
+    Node *current = head;
+    while (current != NULL) {
+        Node *next = current->next;
+        free(current);
+        current = next;
+    }
+
     return 0;
 }

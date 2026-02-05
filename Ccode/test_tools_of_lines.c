@@ -48,3 +48,4 @@ int search_1(int arr[],int num) {
     }
     return count==0? -1: count;
 }
+
